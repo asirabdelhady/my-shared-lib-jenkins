@@ -6,7 +6,7 @@ def call(){
         
         sh """
             gcloud config set project ${projectId}
-            gcloud compute instances delete ${instanceName} --quiet
+            gcloud compute instances delete ${instanceName} --quiet --zone=us-central1-c
             gsutil rm -r gs://${bucketName}
         """
     }
